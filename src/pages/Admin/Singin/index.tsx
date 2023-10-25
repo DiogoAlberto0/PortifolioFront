@@ -31,6 +31,7 @@ export const Singin = () => {
 
     const [cookies, setCookie] = useCookies(['token', 'authenticated']);
 
+    console.log(cookies)
     const navigate = useNavigate()
 
     const {
