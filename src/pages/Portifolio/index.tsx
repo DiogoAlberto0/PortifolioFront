@@ -8,7 +8,7 @@ export const Portifolio = () => {
 
     const { projects } = useContext(ProjectContext)
 
-    const baseURL = import.meta.env.VITE_BASE_API_URL
+    // const baseURL = import.meta.env.VITE_BASE_API_URL
 
     return(
         <PortifolioCotainer>
@@ -20,7 +20,7 @@ export const Portifolio = () => {
                         <PortifolioCard
                             key={project.id}
                             name={project.name}
-                            imageUrl={`${baseURL}${project.imageUrl}`}
+                            imageUrl={`${project.imageUrl}`}
                             id={project.id}
                         />
                     ))

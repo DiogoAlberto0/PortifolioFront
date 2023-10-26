@@ -23,7 +23,7 @@ export const Project = () => {
 
     const [ project, setProject ] = useState<Project>({} as Project)
 
-    const baseURL = import.meta.env.VITE_BASE_API_URL
+    // const baseURL = import.meta.env.VITE_BASE_API_URL
 
     useEffect(( ) => {
         const getProject = async() => {
@@ -41,7 +41,7 @@ export const Project = () => {
             <StyledProject>
                 <Title title={project.name}/>
                 <img
-                    src={`${baseURL}${project.imageUrl}`}
+                    src={`${project.imageUrl}`}
                     alt=""
                 />
 
