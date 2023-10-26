@@ -21,6 +21,7 @@ export const StyledProject = styled.main`
 
     > p {
         line-height: 1.3;
+        white-space: pre-line;
     }
 
     > div {
