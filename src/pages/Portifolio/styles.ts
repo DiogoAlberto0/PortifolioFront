@@ -13,7 +13,7 @@ export const PortifolioCotainer = styled.div`
 
 export const PortifolioContent = styled.div`
     height: 100%;
-    padding: 1rem;
+    padding: 1rem 0;
 
     display: flex;
     flex-wrap: wrap;

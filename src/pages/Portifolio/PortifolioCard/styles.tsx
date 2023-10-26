@@ -2,16 +2,18 @@ import { styled } from "styled-components";
 
 export const PortifolioCardStyle = styled.div`
     width: 50%;
+    height: max-content;
+
     position: relative;
 
-    border: 1px solid transparent;
+    border: 2px solid transparent;
 
     overflow: hidden;
 
     transition: ease-in-out 0.5s;
 
     &:hover{
-        border: 1px dashed black;
+        border: 2px dashed black;
         
         footer {
             transform: translateY(0);
@@ -31,13 +33,13 @@ export const PortifolioCardStyle = styled.div`
         color: white;
         font-weight: 200;
 
-        transform: translateY(110%);
+        transform: translateY(115%);
         transition: ease-in-out 0.5s;
 
     }
     img {
         width: 100%;
-        height: 100%;
+        /* height: 100%; */
 
 
         object-fit: scale-down;
