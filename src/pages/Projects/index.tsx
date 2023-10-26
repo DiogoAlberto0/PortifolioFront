@@ -41,7 +41,7 @@ export const Project = () => {
             <StyledProject>
                 <Title title={project.name}/>
                 <img
-                    src={`${project.imageUrl}`}
+                    src={project.imageUrl}
                     alt=""
                 />
 

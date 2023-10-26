@@ -20,7 +20,7 @@ export const Portifolio = () => {
                         <PortifolioCard
                             key={project.id}
                             name={project.name}
-                            imageUrl={`${project.imageUrl}`}
+                            imageUrl={project.imageUrl}
                             id={project.id}
                         />
                     ))
