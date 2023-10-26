@@ -28,8 +28,7 @@ const ProjectFormSchema = z.object({
         .max(100, 'O nome deve ter no máximo 100 caracteres'),
 
     description: z.string()
-        .min(1, 'Informe a descrição do projeto')
-        .max(500, 'O texto deve ter no máximo 500 caracteres'),
+        .min(1, 'Informe a descrição do projeto'),
 
     githubUrl: z.string()
         .min(1, 'Informe o link do projeto no github'),
