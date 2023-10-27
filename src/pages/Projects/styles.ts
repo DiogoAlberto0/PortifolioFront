@@ -24,6 +24,32 @@ export const StyledProject = styled.main`
         white-space: pre-line;
     }
 
+    > button {
+        background-color: red;
+        display: flex;
+
+        width: max-content;
+        height: max-content;
+
+
+        padding: 0.5rem;
+
+        border: 0;
+        border-radius: 1rem;
+
+        margin: 1rem auto;
+
+        &:hover {
+            > svg {
+                color: white;
+            }
+        }
+        > svg {
+            height: 32px;
+            width: 32px;
+        }
+    }
+
     > div {
 
         display: flex;
@@ -72,6 +98,9 @@ export const StyledProject = styled.main`
                 }
             }
         }
+
+        
+        
 
         @media(max-width: 768px) {
             flex-direction: column;

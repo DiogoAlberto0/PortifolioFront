@@ -86,8 +86,6 @@ export const PostProject = () => {
 
 
     const onSubmit = async (data: ProjectFormData) => {
-
-        console.log(data)
         const { name, description, githubUrl, projectUrl, image } = data
 
         const config = {
@@ -106,12 +104,21 @@ export const PostProject = () => {
                         projectUrl,
                         imageUrl: response.data.path
                     }, { headers: { authentication: cookies.token } })
-                        .then(response => console.log(response.data))
-                        .catch(erro => console.warn(erro.response.data))
+                        .then(response => {
+                            alert(`Projeto cadastrado com sucesso: ${response.data}`)
+                            reset()
+                        })
+                        .catch(erro => alert(erro.response.data))
 
                 })
                 .catch(erro => console.warn(erro.response.data))
         } else {
+
+            const resp = confirm("tem certeza que deseja alterar esse projeto?")
+
+            if (!resp) {
+                return
+            }
             await api.post('/image', { image }, config)
                 .then(async response => {
                     await api.put(`/project/${projectSelectedId}`, {
@@ -126,9 +133,9 @@ export const PostProject = () => {
 
                 })
                 .catch(erro => console.warn(erro.response.data))
-        }
 
-        reset()
+                reset()
+        }
     }
 
     if (!authenticated) {

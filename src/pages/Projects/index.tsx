@@ -4,9 +4,10 @@ import { useParams } from "react-router-dom"
 
 import { Title } from "../../components/Title"
 
-import { GithubLogo, Link as LinkIcon} from "@phosphor-icons/react"
+import { GithubLogo, Link as LinkIcon, Trash} from "@phosphor-icons/react"
 import { useEffect, useState } from "react"
 import { api } from "../../api/axios"
+import { useCookies } from "react-cookie"
 
 type Project = {
     id: number;
@@ -19,11 +20,18 @@ type Project = {
 
 export const Project = () => {
 
+    const [ cookies ] = useCookies(['token', 'authenticated'])
+
+    const config = {
+        headers: {
+            authentication: cookies.token,
+            "Content-Type": 'multipart/form-data'
+        }
+    }
+
     const { id } = useParams()
 
     const [ project, setProject ] = useState<Project>({} as Project)
-
-    // const baseURL = import.meta.env.VITE_BASE_API_URL
 
     useEffect(( ) => {
         const getProject = async() => {
@@ -34,7 +42,17 @@ export const Project = () => {
         getProject()
     }, [id])
 
-    if (!id) {
+    const deleteProject = async () => {
+        const resp = confirm("tem certeza que deseja excluir esse projeto?")
+
+        if(resp) {
+            await api.delete(`/project/${id}`, config)
+                .then(() => alert("Projeto excluído com sucesso!"))
+                .catch(erro => alert(erro.response.data))
+        }
+    }
+
+    if (!id || !project) {
         return <h1>Página Não Encontrada</h1>
     } else {
         return (
@@ -71,7 +89,9 @@ export const Project = () => {
                         />
                         Código
                     </a>
+
                 </div>
+                {cookies.authenticated && <button onClick={() => deleteProject()}><Trash/></button>}
             </StyledProject>
         )
     }
