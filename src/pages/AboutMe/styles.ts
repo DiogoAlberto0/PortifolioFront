@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 export const AboutMeContainer = styled.main`
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 1rem;
     
     padding: 2rem;
 
@@ -12,8 +12,11 @@ export const AboutMeContainer = styled.main`
 
     overflow-y: auto;
     h2 {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin-top: 1rem;
+    }
+    > p {
+        text-indent: 2rem;
     }
 
     @media(max-width: 768px) {
@@ -52,6 +55,8 @@ export const HabilityContent = styled.div`
         display: flex;
         flex-direction: column;
         width: 100%;
+
+        gap: 0.5rem;
 
         h4 {
             font-size: 1rem;

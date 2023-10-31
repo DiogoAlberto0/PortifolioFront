@@ -15,7 +15,7 @@ export const Home = () => {
                 <h2>Eu sou o <span>Diogo</span></h2>
                 <h3>React developer</h3>
 
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors.</p>
+                <p>Olá! Sou Diogo Alberto, o criador por trás desses aplicativos web incríveis! Bem-vindo ao meu portfólio digital, onde a inovação encontra a funcionalidade. Explore e descubra as soluções que transformam ideias em experiências digitais extraordinárias. Sinta-se à vontade para explorar e entrar em contato para transformar sua visão em realidade. Boas-vindas ao futuro da tecnologia!</p>
 
                 <NavLink to="/aboutme"><button>Mais sobre mim</button></NavLink>
             </div>
